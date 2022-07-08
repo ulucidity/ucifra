@@ -13,26 +13,34 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: sha256.cpp
+///   File: public_key.cpp
 ///
 /// Author: $author$
-///   Date: 3/12/2022, 6/20/2022
+///   Date: 7/6/2022
 ///////////////////////////////////////////////////////////////////////
-#include "xos/crypto/hash/sha256.hpp"
+#include "xos/crypto/ecc/curve25519/google/donna/public_key.hpp"
+#include "thirdparty/google/curve25519/curve25519-donna.c"
 
-#if !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-///#define XOS_CRYPTO_HASH_SHA256_INSTANCE
-#endif /// !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+#if !defined(XOS_CRYPTO_ECC_CURVE25519_GOOGLE_DONNA_PUBLIC_KEY_INSTANCE)
+///#define XOS_CRYPTO_ECC_CURVE25519_GOOGLE_DONNA_PUBLIC_KEY_INSTANCE
+#endif /// !defined(XOS_CRYPTO_ECC_CURVE25519_GOOGLE_DONNA_PUBLIC_KEY_INSTANCE)
 
 namespace xos {
 namespace crypto {
-namespace hash {
+namespace ecc {
+namespace curve25519 {
+namespace google {
+namespace donna {
 
-///  Class: sha256t
-#if defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-static sha256 the_sha256;
-#endif /// defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+///  Class: public_keyt
+#if defined(XOS_CRYPTO_ECC_CURVE25519_GOOGLE_DONNA_PUBLIC_KEY_INSTANCE)
+static public_key the_public_key;
+#endif /// defined(XOS_CRYPTO_ECC_CURVE25519_GOOGLE_DONNA_PUBLIC_KEY_INSTANCE)
 
-} /// namespace hash
+
+} /// namespace donna
+} /// namespace google
+} /// namespace curve25519
+} /// namespace ecc
 } /// namespace crypto
 } /// namespace xos

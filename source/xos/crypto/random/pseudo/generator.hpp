@@ -16,7 +16,7 @@
 ///   File: generator.hpp
 ///
 /// Author: $author$
-///   Date: 5/3/2020
+///   Date: 5/3/2020, 7/6/2022
 ///////////////////////////////////////////////////////////////////////
 #ifndef XOS_CRYPTO_RANDOM_PSEUDO_GENERATOR_HPP
 #define XOS_CRYPTO_RANDOM_PSEUDO_GENERATOR_HPP
@@ -39,6 +39,8 @@ public:
 
     /// constructor / destructor
     generatort(const generatort& copy): m_avail(0), m_seed(0), m_rand(0) {
+    }
+    generatort(unsigned seed): m_avail(0), m_seed(seed), m_rand(0) {
     }
     generatort(): m_avail(0), m_seed(0), m_rand(0) {
     }

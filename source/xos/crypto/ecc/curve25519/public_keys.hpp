@@ -13,26 +13,25 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: sha256.cpp
+///   File: public_keys.hpp
 ///
 /// Author: $author$
-///   Date: 3/12/2022, 6/20/2022
+///   Date: 7/6/2022
 ///////////////////////////////////////////////////////////////////////
-#include "xos/crypto/hash/sha256.hpp"
+#ifndef XOS_CRYPTO_ECC_CURVE25519_PUBLIC_KEYS_HPP
+#define XOS_CRYPTO_ECC_CURVE25519_PUBLIC_KEYS_HPP
 
-#if !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-///#define XOS_CRYPTO_HASH_SHA256_INSTANCE
-#endif /// !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+#include "xos/crypto/ecc/curve25519/msotoodeh/public_key.hpp"
+#include "xos/crypto/ecc/curve25519/google/donna/public_key.hpp"
 
 namespace xos {
 namespace crypto {
-namespace hash {
+namespace ecc {
+namespace curve25519 {
 
-///  Class: sha256t
-#if defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-static sha256 the_sha256;
-#endif /// defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-
-} /// namespace hash
+} /// namespace curve25519
+} /// namespace ecc
 } /// namespace crypto
 } /// namespace xos
+
+#endif /// ndef XOS_CRYPTO_ECC_CURVE25519_PUBLIC_KEYS_HPP

@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////
-/// Copyright (c) 1988-2020 $organization$
+/// Copyright (c) 1988-2022 $organization$
 ///
 /// This software is provided by the author and contributors ``as is'' 
 /// and any express or implied warranties, including, but not limited to, 
@@ -16,7 +16,7 @@
 ///   File: sha256.hpp
 ///
 /// Author: $author$
-///   Date: 5/1/2020
+///   Date: 3/12/2022, 6/20/2022
 ///////////////////////////////////////////////////////////////////////
 #ifndef XOS_CRYPTO_HASH_SHA256_HPP
 #define XOS_CRYPTO_HASH_SHA256_HPP
@@ -55,6 +55,13 @@ public:
     };
 
     /// constructor / destructor
+    sha256t(void* out, size_t outsize, const void* in, size_t inlen, const void* key, size_t keylen)
+    : extends(HASHSIZE, BLOCKSIZE, KEYMIN, KEYMAX, m_key, m_mac, m_hash) {
+        this->operator~();
+        if (0 > (this->operator()(out, outsize, in, inlen, key, keylen))) {
+            throw crypto::exception(error_failed);
+        }
+    }
     sha256t(void* out, size_t outsize, const void* in, size_t inlen)
     : extends(HASHSIZE, BLOCKSIZE, KEYMIN, KEYMAX, m_key, m_mac, m_hash) {
         this->operator~();
@@ -132,4 +139,4 @@ typedef sha256t<> sha256;
 } /// namespace crypto
 } /// namespace xos
 
-#endif /// ndef XOS_CRYPTO_HASH_SHA256_HPP 
+#endif /// ndef XOS_CRYPTO_HASH_SHA256_HPP

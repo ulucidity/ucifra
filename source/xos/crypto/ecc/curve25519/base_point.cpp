@@ -13,26 +13,29 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: sha256.cpp
+///   File: base_point.cpp
 ///
 /// Author: $author$
-///   Date: 3/12/2022, 6/20/2022
+///   Date: 7/6/2022
 ///////////////////////////////////////////////////////////////////////
-#include "xos/crypto/hash/sha256.hpp"
+#include "xos/crypto/ecc/curve25519/base_point.hpp"
 
-#if !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-///#define XOS_CRYPTO_HASH_SHA256_INSTANCE
-#endif /// !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+#if !defined(XOS_CRYPTO_ECC_CURVE25519_BASE_POINT_INSTANCE)
+///#define XOS_CRYPTO_ECC_CURVE25519_BASE_POINT_INSTANCE
+#endif /// !defined(XOS_CRYPTO_ECC_CURVE25519_BASE_POINT_INSTANCE)
 
 namespace xos {
 namespace crypto {
-namespace hash {
+namespace ecc {
+namespace curve25519 {
 
-///  Class: sha256t
-#if defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-static sha256 the_sha256;
-#endif /// defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+///  Class: base_pointt
+#if defined(XOS_CRYPTO_ECC_CURVE25519_BASE_POINT_INSTANCE)
+static base_point the_base_point;
+#endif /// defined(XOS_CRYPTO_ECC_CURVE25519_BASE_POINT_INSTANCE)
 
-} /// namespace hash
+
+} /// namespace curve25519
+} /// namespace ecc
 } /// namespace crypto
 } /// namespace xos

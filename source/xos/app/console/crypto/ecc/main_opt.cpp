@@ -13,26 +13,30 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: sha256.cpp
+///   File: main_opt.cpp
 ///
 /// Author: $author$
-///   Date: 3/12/2022, 6/20/2022
+///   Date: 7/6/2022
 ///////////////////////////////////////////////////////////////////////
-#include "xos/crypto/hash/sha256.hpp"
+#include "xos/app/console/crypto/ecc/main_opt.hpp"
 
-#if !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-///#define XOS_CRYPTO_HASH_SHA256_INSTANCE
-#endif /// !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+#if !defined(XOS_APP_CONSOLE_CRYPTO_ECC_MAIN_OPT_INSTANCE)
+///#define XOS_APP_CONSOLE_CRYPTO_ECC_MAIN_OPT_INSTANCE
+#endif /// !defined(XOS_APP_CONSOLE_CRYPTO_ECC_MAIN_OPT_NSTANCE)
 
 namespace xos {
+namespace app {
+namespace console {
 namespace crypto {
-namespace hash {
+namespace ecc {
 
-///  Class: sha256t
-#if defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-static sha256 the_sha256;
-#endif /// defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+/// class main_opt
+#if defined(XOS_APP_CONSOLE_CRYPTO_ECC_MAIN_OPT_INSTANCE)
+static main_opt the_main_opt;
+#endif /// defined(XOS_APP_CONSOLE_CRYPTO_ECC_MAIN_OPT_INSTANCE)
 
-} /// namespace hash
+} /// namespace ecc
 } /// namespace crypto
+} /// namespace console
+} /// namespace app
 } /// namespace xos

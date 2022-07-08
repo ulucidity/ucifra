@@ -13,26 +13,37 @@
 /// or otherwise) arising in any way out of the use of this software, 
 /// even if advised of the possibility of such damage.
 ///
-///   File: sha256.cpp
+///   File: main.cpp
 ///
 /// Author: $author$
-///   Date: 3/12/2022, 6/20/2022
+///   Date: 7/7/2022
 ///////////////////////////////////////////////////////////////////////
-#include "xos/crypto/hash/sha256.hpp"
+#include "xos/app/console/crypto/output/main.hpp"
 
-#if !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-///#define XOS_CRYPTO_HASH_SHA256_INSTANCE
-#endif /// !defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+#if defined(XOS_CONSOLE_MAIN_MAIN)
+#include "xos/console/main_main.cpp"
+#if !defined(XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_INSTANCE)
+#define XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_INSTANCE
+#endif /// !defined(XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_NSTANCE)
+#endif /// defined(XOS_CONSOLE_MAIN_MAIN)
+
+#if !defined(XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_INSTANCE)
+///#define XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_INSTANCE
+#endif /// !defined(XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_NSTANCE)
 
 namespace xos {
+namespace app {
+namespace console {
 namespace crypto {
-namespace hash {
+namespace output {
 
-///  Class: sha256t
-#if defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
-static sha256 the_sha256;
-#endif /// defined(XOS_CRYPTO_HASH_SHA256_INSTANCE)
+/// class main
+#if defined(XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_INSTANCE)
+static main the_main;
+#endif /// defined(XOS_APP_CONSOLE_CRYPTO_OUTPUT_MAIN_INSTANCE)
 
-} /// namespace hash
+} /// namespace output
 } /// namespace crypto
+} /// namespace console
+} /// namespace app
 } /// namespace xos

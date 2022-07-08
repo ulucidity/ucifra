@@ -55,7 +55,7 @@
 ///   File: sha256.cpp
 ///
 /// Author: $author$
-///   Date: 5/1/2020
+///   Date: 3/12/2022, 6/20/2022
 /// 
 /// OpenSSL Project's implementation of SHA256 modified to be a C++ class
 /// implementation.
@@ -99,6 +99,10 @@
     s1 = X[(i+14)&0x0f];	s1 = sigma1(s1);	\
     T1 = X[(i)&0x0f] += s0 + s1 + X[(i+9)&0x0f];	\
     ROUND_X_X(i,a,b,c,d,e,f,g,h)
+
+#if !defined(XOS_CRYPTO_HASH_OPENSSL_SHA256_INSTANCE)
+///#define XOS_CRYPTO_HASH_OPENSSL_SHA256_INSTANCE
+#endif /// !defined(XOS_CRYPTO_HASH_OPENSSL_SHA256_INSTANCE)
 
 namespace xos {
 namespace crypto {
@@ -317,6 +321,11 @@ void sha256::transform() {
     m_G += g;
     m_H += h;
 }
+
+///  Class: sha256t
+#if defined(XOS_CRYPTO_HASH_OPENSSL_SHA256_INSTANCE)
+static sha256 the_sha256;
+#endif /// defined(XOS_CRYPTO_HASH_OPENSSL_SHA256_INSTANCE)
 
 } /// namespace openssl
 } /// namespace hash
